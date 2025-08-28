@@ -47,20 +47,22 @@ Or clone the repository:
     cd pypioffline
     pip install -r requirements.txt
 
+
 Typical Usage
 -------------
 
 Start by creating a configuration file (optional) (this will typically take a few hours depending on your connection speed):
 
-... code-block:: bash
+.. code-block:: bash
 
     pypioffline config --full > ~/.pypioffline
+
 
 Review the config file and adjust settings as needed.
 
 Then sync the repository (this may take many hours as it downloads packages):
 
-... code-block:: bash
+.. code-block:: bash
 
     pypioffline sync
 
@@ -68,13 +70,13 @@ You can now copy the content of the repository directory to your offline environ
 
 For testing purposes you can run a local HTTP server:
 
-... code-block:: bash
+.. code-block:: bash
 
     pypioffline serve
 
 And point a pip client to it:
 
-... code-block:: bash
+.. code-block:: bash
 
     pip install --index-url http://localhost:8000/simple/ <package>
 
@@ -84,7 +86,7 @@ Examples
 This will download all packages for Python 3.10 and Linux platform, both wheels and 
 source distributions:
 
-... code-block:: bash
+.. code-block:: bash
 
     pypioffline --repository ~/pypioffline \
           sync --python-versions cp310 py3 py2.py3 py3.10 py310 any \
@@ -109,24 +111,24 @@ Downloading list of packages
 
 You can search for packages by name and by regex:
 
-... code-block:: bash
+.. code-block:: bash
 
     pypioffline search <package-name-or-regex>
 
-... code-block:: bash
+.. code-block:: bash
 
     pypioffline search --regex '^requests$'
 
 
 You can download a specific package by name:
 
-... code-block:: bash
+.. code-block:: bash
 
     pypioffline sync --package <package-name>
 
 You can download a list of packages by providing a text file with one package name per line:
 
-... code-block:: bash
+.. code-block:: bash
 
     pypioffline search --regex '^requests$' > requests_packages.txt
     pypioffline sync --package-file requests_packages.txt
@@ -139,7 +141,7 @@ Detailed Usage
 
 See the help for details on all commands and options:
 
-... code-block:: bash
+.. code-block:: bash
 
     pypioffline --help
     pypioffline <command> --help
